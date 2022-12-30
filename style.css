@@ -1,0 +1,512 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: gray;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+/* navbar styling */
+.navbar {
+  position: fixed;
+  width: 100%;
+  /* background: crimson; */
+  padding: 30px 0;
+  font-family: "ubuntu", sans-serif;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.navbar.sticky {
+  padding: 15px 0;
+  background: gray;
+}
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+}
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.navbar .menu li a:hover {
+  color: crimson;
+}
+.navbar.sticky .menu li a:hover {
+  color: whitesmoke;
+}
+
+/* menu btn styling */
+.menu-btn {
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+/* home section styling */
+.home {
+  display: flex;
+  background: url("images/home.jpg") no-repeat center;
+  height: 100vh;
+  color: white;
+  min-height: 500px;
+  font-family: "ubuntu", "sans-serif";
+}
+.home .max-width {
+  margin: auto 0 auto 40px;
+}
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+.home .home-content .text-3 span {
+  color: crimson;
+  font-weight: 500;
+}
+
+/* all similar content styling code */
+section {
+  padding: 100px 0;
+}
+.specialization {
+  font-family: sans-serif, "Poppins";
+}
+section .title {
+  position: relative;
+  font-family: "ubuntu", "sans-serif";
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "ubuntu", "sans-serif";
+}
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: #111;
+  transform: translate(-50%);
+}
+
+/* about section styling */
+.about,
+.education,
+.experience,
+.projects,
+footer {
+  font-family: "Poppins", "sans-serif";
+}
+.about .about-content,
+.education .edu-content,
+.projects .projects-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.about .about-content .left {
+  width: 45%;
+}
+.about .about-content .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 40px;
+}
+.about .about-content .right {
+  width: 55%;
+}
+.about .about-content .right .text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.about .about-content .right p{
+  text-align: justify;
+  margin-left: 60px;
+  margin-top: -40px;
+}
+.about .about-content .right p a{
+  font-weight: 800;
+}
+.about .about-content .right img{
+  width: 40px;
+  height: 40px;
+  margin-top: 15px;
+}
+/* education section styling */
+.education,
+.specialization {
+  color: white;
+  background: #111;
+}
+.education .title::before {
+  background: white;
+}
+.education .edu-content .card:hover {
+  background: gray;
+}
+.education .edu-content .card .box {
+  transition: all 0.3s ease;
+}
+.education .edu-content .card:hover .box {
+  transform: scale(1.05);
+}
+.education .edu-content .card {
+  width: calc(50% - 20px);
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+}
+.education .edu-content .card span {
+  font-size: 50px;
+}
+.education .edu-content .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+/* experience section styling */
+.experience .experience-content .text {
+  font-size: 25px;
+  font-weight: 1000;
+}
+.experience .experience-content p {
+  font-weight: 600;
+  font-size: 20px;
+}
+.experience .experience-content .list {
+  padding: 10px 30px;
+}
+.experience .experience-content .muted {
+  font-size: 15px;
+  font-weight: 0;
+  color: gray;
+}
+.experience .experience-content ul {
+  padding: 0 30px;
+}
+/* specialization section styling */
+.specialization .title::before {
+  background: white;
+}
+.specialization .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  transition: all 0.3s ease;
+}
+.specialization .carousel .card:hover {
+  background: gray;
+}
+.specialization .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.specialization .carousel .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+.specialization .carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid gray;
+}
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid gray !important;
+  transition: all 0.3s ease;
+}
+.owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover {
+  background: gray !important;
+}
+/* projects section styling */
+.projects .projects-content .card img {
+  width: 100%;
+  height: 320px;
+}
+
+.projects .projects-content .left {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .projects-content .left-2 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .projects-content .left-2 img {
+  width: 100%;
+  height: 700px;
+}
+
+.projects .projects-content .right-2 {
+  width: 70%;
+  margin-right: -20px;
+  text-align: justify;
+}
+
+.projects .projects-content img {
+  width: 100%;
+  height: 450px;
+}
+
+.projects .projects-content .right {
+  width: 30%;
+  margin-right: -20px;
+  text-align: justify;
+}
+
+.projects .projects-content .right a,
+.projects .projects-content .right-2 a {
+  font-weight: 800;
+}
+/* footer styling */
+footer{
+  width: 100%;
+  background-color: #111;
+  height: 100px;
+}
+footer p{
+  color: white;
+  margin-top: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+footer .header{
+  margin-left: 30px;
+  text-align: left;
+  font-weight: 800;
+  font-size: 30px;
+}
+/* responsive media query start */
+@media (max-width: 1300px) {
+  .home .max-width {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 1104px) {
+  .home .max-width {
+    margin-left: 0px;
+  }
+  .about .about-content .left img {
+    height: 350px;
+    width: 350px;
+  }
+}
+@media (max-width: 991px) {
+  .max-width {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 947px) {
+  .max-width {
+    padding: 0 50px;
+  }
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .navbar .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background: #111;
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+  }
+  .navbar .menu.active {
+    left: 0;
+  }
+  .navbar .menu li {
+    display: block;
+  }
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 25px;
+  }
+  .home .home-content .text-2 {
+    font-size: 70px;
+  }
+  .home .home-content .text-3 {
+    font-size: 35px;
+  }
+  .max-width {
+    max-width: 800px;
+  }
+  .about .about-content .column {
+    width: 100%;
+  }
+  .about .about-content .left {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  .about .about-content .right {
+    flex: 100%;
+  }
+  .education .edu-content .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .projects .projects-content .left {
+    width: 100%;
+  }
+  .projects .projects-content .right {
+    text-align: justify;
+    width: 100%;
+  }
+  .projects .projects-content .left-2 {
+    width: 100%;
+  }
+  .projects .projects-content .right-2 {
+    width: 100%;
+  }
+}
+@media (max-width: 690px) {
+  .max-width {
+    padding: 0 23px;
+  }
+  .home .home-content .text-2 {
+    font-size: 60px;
+  }
+  .home .home-content .text-3 {
+    font-size: 32px;
+  }
+  .projects .projects-content img {
+    height: 350px;
+  }
+}
+@media (max-width: 500px) {
+  .home .max-width {
+    margin-left: 0px;
+  }
+  .navbar .logo a {
+    font-size: 25px;
+  }
+  .home .home-content .text-1 {
+    font-size: 25px;
+  }
+  .home .home-content .text-2 {
+    font-size: 40px;
+  }
+  .home .home-content .text-3 {
+    font-size: 20px;
+  }
+  .experience .experience-content p {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .projects .projects-content .left img {
+    width: 450px;
+    height: 300px;
+  }
+  .owl-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .owl-dot.active {
+    width: 17px;
+  }
+  footer p{
+    font-size: 15px;
+  }
+  footer .header{
+    font-size: 20px;
+  }
+}
+@media(max-width: 450px){
+  .projects .projects-content .left img {
+    width: 370px;
+    height: 300px;
+  }
+  footer p{
+    font-size: 15px;
+  }
+  footer .header{
+    font-size: 20px;
+  }
+}
